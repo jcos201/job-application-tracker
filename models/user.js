@@ -1,17 +1,19 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const companySchema = new Schema({
-    name: String,
-
+const applicationSchema = new Schema({
+    companyName: String,
+    jobTitle: String,
+    dateApplied: Date,
+    interviewDate: Date,
+    contactName: String,
 })
 const userSchema = new Schema({
     name: String,
     email: String,
     avatarURL: String,
     googleId: String,
-    jobTitle: [],
-    companies: [companySchema],
+    applications: [applicationSchema],
 }, {
     timestamps: true,
 });

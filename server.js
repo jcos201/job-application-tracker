@@ -20,6 +20,7 @@ require('./config/passport');
 
 // define routes
 const indexRoutes = require('./routes/index');
+const userRoutes = require('./routes/users');
 
 app.set('view engine', 'ejs');
 
@@ -44,6 +45,7 @@ app.use(function(req, res, next){
 });
 
 app.use('/', indexRoutes);
+app.use('/', userRoutes);
 // export the router object
 
 app.listen(port, () => {
