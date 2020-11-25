@@ -1,5 +1,12 @@
 <%- include('../partials/header') %>
-<h3>this is where the text of our app will go</h3>
+
+A journey of a thousand miles begins with a single step
+<div class="card-action">
+    <form action="/applications/new" method="get">
+      <input type="text" name="text" class="white-text">
+      <button type="submit" class="btn white-text">Add A New Application</button>
+    </form>
+  </div>
 </body>
 
 <%- include('../partials/footer') %>
