@@ -8,9 +8,15 @@ module.exports = {
 }
 
 function index(req, res) {
+    console.log('req.user:')
+    console.log(req.user)
+    console.log('req.body:')
+    console.log(req.body)
+    
+    
     User.find({}, function(err, users) {
-        console.log('req.user:')
-        console.log(req.user)
+        console.log('users in index:')
+        console.log(users)
         res.render('users/index', {
             users,
             appUser: req.user,
@@ -30,10 +36,19 @@ function showAppl(req, res) {
     })
 };
 
-
 function newAppl(req, res) {
-    req.appUser.applications.push(req.body);
-    req.appUser.save(function(err) {
-        res.redirect('/users');
-    });
+    console.log('req.body:')
+    console.log(req.body)
+    
+    User.find({}, function(err, users) {
+        console.log('users from newAppl');
+        console.log(users);
+        users[0].applications.push(req.body);
+
+        users[0].save(function(err){
+            res.redirect('/users')
+        });
+
+    })
+
 };
