@@ -8,15 +8,10 @@ module.exports = {
 }
 
 function index(req, res) {
-    console.log('req.user:')
-    console.log(req.user)
-    console.log('req.body:')
-    console.log(req.body)
-    
-    
-    User.find({}, function(err, users) {
-        console.log('users in index:')
-        console.log(users)
+    User.find({}, function (err, users) {
+
+        if (!req.user) { req.user = users[0] }
+
         res.render('users/index', {
             users,
             appUser: req.user,
@@ -26,9 +21,8 @@ function index(req, res) {
 };
 
 function showAppl(req, res) {
-    User.find({}, function(err, users) {
-        console.log('Users:')
-        console.log(users)
+    User.find({}, function (err, users) {
+
         res.render('applications/new', {
             appUser: users,
             title: 'Fill out the form below to add your latest application',
@@ -37,15 +31,10 @@ function showAppl(req, res) {
 };
 
 function newAppl(req, res) {
-    console.log('req.body:')
-    console.log(req.body)
-    
-    User.find({}, function(err, users) {
-        console.log('users from newAppl');
-        console.log(users);
+    User.find({}, function (err, users) {
         users[0].applications.push(req.body);
 
-        users[0].save(function(err){
+        users[0].save(function (err) {
             res.redirect('/users')
         });
 
