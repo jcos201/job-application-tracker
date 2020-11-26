@@ -1,12 +1,43 @@
 <%- include('../partials/header') %>
 
-A journey of a thousand miles begins with a single step
-<div class="card-action">
-    <form action="/applications/new" method="get">
-      <input type="text" name="text" class="white-text">
-      <button type="submit" class="btn white-text">Add A New Application</button>
-    </form>
-  </div>
+
+<div class="card-action right">
+  <form action="/applications/new" method="get">
+    <button type="submit" class="btn white-text">Add A New Application</button>
+  </form>
+</div>
+
+<div> <% if(appUser) { %>
+  <table>
+    <thead>
+      <tr><th colspan="6">Jobs Applied for:</th></tr>
+      <tr>
+      <th>Company Name</th>
+      <th>Job Applied For</th>
+      <th>Name of Contact at Company</th>
+      <th>Date Applied:</th>
+      <th>Interview Scheduled</th>  
+      <th></th>
+      </tr>
+    </thead>
+  <% appUser.applications.forEach(function(jobsApplied){ %>
+    <tbody>
+      <tr>
+        <td><%= jobsApplied.companyName %></td>
+        <td><%= jobsApplied.jobTitle %></td>
+        <td><%= jobsApplied.contactName %></td>
+        <td><%= jobsApplied.dateApplied %></td>
+        <td><%= jobsApplied.interviewDate %></td>
+        <td><i class="material-icons">delete</i></td>
+      </tr>
+    </tbody>
+    <% })%>
+  </table>
+  <% } else { %>
+  <p>A journey of a thousand miles begins with a single step</p>
+  <% } %> </li>
+</div>
+
 </body>
 
 <%- include('../partials/footer') %>
