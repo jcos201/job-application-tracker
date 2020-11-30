@@ -1,16 +1,16 @@
 <%- include('../partials/header') %>
 
 
-<form action="/applications" method="post">
-    <div class="input-field"><label for="companyName">Company Name</label>
+<form action="/applications/" method="post">
+    <div class="input-field"><label>Company Name</label>
     <input type="text" name="companyName" placeholder="Name Of Company" required></div>
-    <div class="input-field"><label for="companyName">Position</label>
+    <div class="input-field"><label>Position</label>
     <input type="text" name="jobTitle" placeholder="Position Desired" required></div>
-    <div class="input-field"><label for="companyName">Name of Contact in Company</label>
+    <div class="input-field"><label>Name of Contact in Company</label>
     <input type="text" name="contactName" placeholder="Contact Name"></div>
-    <div class="input-field"><label for="companyName">Date Applied</label>
+    <div class="input-field"><label>Date Applied</label>
     <input type="date" name="dateApplied" placeholder="Date of Application"></div>
-    <div class="input-field"><label for="companyName">Interview Date</label>
+    <div class="input-field"><label>Interview Date</label>
     <input type="date" name="interviewDate" placeholder="Date of Interview Scheduled"></div>
     <button type="submit" class="btn white-text">Add Application to Database</button>
 </form>

@@ -8,9 +8,9 @@
 </div>
 
 <div> <% if(appUser) { %>
-  <table>
+  <table class="responsive-table highlight">
     <thead>
-      <tr><th colspan="6">Jobs Applied for:</th></tr>
+      <tr><th colspan="6" class="center">My Applications:</th></tr>
       <tr>
       <th>Company Name</th>
       <th>Job Applied For</th>
@@ -28,7 +28,10 @@
         <td><%= jobsApplied.contactName %></td>
         <td><%= jobsApplied.dateApplied %></td>
         <td><%= jobsApplied.interviewDate %></td>
-        <td><i class="material-icons">delete</i></td>
+        <td><form action="/applications/<%= jobsApplied._id %>" method="get"><input type="submit" value="Edit" class="btn"></form>
+           <br/>
+          <form action="/delete/<%= jobsApplied._id %>" method="delete"><input type="submit" value="Delete" class="btn"></form>
+        </td>
       </tr>
     </tbody>
     <% })%>

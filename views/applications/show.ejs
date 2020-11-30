@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<form action="/applications/<%= applicationID %>?_method=PUT" method="POST">
+    <div class="input-field"><label>Company Name</label>
+    <input type="text" name="companyName" placeholder="Name Of Company" required value="<%= application.companyName %>"></div>
+    <div class="input-field"><label>Position</label>
+    <input type="text" name="jobTitle" placeholder="Position Desired" required value="<%= application.jobTitle %>"></div>
+    <div class="input-field"><label>Name of Contact in Company</label>
+    <input type="text" name="contactName" placeholder="Contact Name" value="<%= application.contactName %>"></div>
+    <div class="input-field"><label>Date Applied</label>
+    <input type="date" name="dateApplied" placeholder="Date of Application" value="<%= application.dateApplied ? application.dateApplied.getFullYear() +'-'+ ('0' + application.dateApplied.getMonth()).slice(-2) +'-'+ ('0' + application.dateApplied.getDate()).slice(-2) : '' %>"></div>
+    <div class="input-field"><label>Interview Date</label>
+    <input type="date" name="interviewDate" placeholder="Date of Interview Scheduled" value="<%= application.interviewDate ? application.interviewDate.getFullYear() +'-'+ ('0' + application.interviewDate.getMonth()).slice(-2) +'-'+ ('0' + application.interviewDate.getDate()).slice(-2) : '' %>"></div>
+    <button type="submit" class="btn white-text">Update Application</button>
+</form>
+<p>
+<form action="/applications" method="get">
+    <button type="submit" class="btn">Cancel</button>
+</form>
+</p>
+
+<%- include('../partials/footer') %>
