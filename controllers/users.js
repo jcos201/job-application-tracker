@@ -67,18 +67,9 @@ function updateAppl(req, res) {
 
         indx =  users[0].applications.indexOf(users[0].applications.find(appl => appl.id === req.params.id));
 
-        application = users[0].applications.find(appl => appl.id === req.params.id)
-        console.log('first console.log');
-        console.log(application);
         req.body.done = false;
         users[0].applications.splice(indx, 1, req.body);
 
-        application1 = users[0].applications.find(appl => appl.id === req.params.id)
-        console.log('second console.log');
-        console.log(application1);
-        
-        console.log('users:');
-        console.log(users);
         users[0].save(function (err) {
             res.redirect('/users')
         });
@@ -87,5 +78,17 @@ function updateAppl(req, res) {
 
 
 function deleteAppl(req,res) {
+    User.find({}, function (err, users) {
+        req.body._id = req.params.id;
+    
+        indx =  users[0].applications.indexOf(users[0].applications.find(appl => appl.id === req.params.id));
+    
+        req.body.done = false;
+        users[0].applications.splice(indx, 1);
+    
+        users[0].save(function (err) {
+            res.redirect('/users')
+        });
+    })
 
 };
