@@ -9,8 +9,8 @@ This app can be used to track all the job applications submitted during a job se
   * Interview Date (optional)
   * Name of Contact at Company (optional)
   * Notes about application (optional)
-* Application info will persist even after you've logged out
 * Edit or Delete application entry
+* Application info will persist even after you've logged out
 
 ## Entity Relationship Diagram
 ![ERD Screenshot - 1 User can have Many Applications](./public/images/ERD.jpeg) 
