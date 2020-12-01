@@ -21,7 +21,7 @@ This app can be used to track all the job applications submitted during a job se
 
 
 ## Getting Started
-Click [here](https://war-the-card-game.netlify.app/) to play the game. 
+Click [here](https://my-job-application-tracker.herokuapp.com/) to get started. 
  
 
 ## Future Enhancements
