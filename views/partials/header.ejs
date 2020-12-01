@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Texturina:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
     <!-- Materialize Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -21,15 +23,14 @@
         <nav>
           <div class="nav-wrapper">
             <a href="/" class="brand-logo left">My Job Application Tracker</a>
-            <ul class="right">
-                <li>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+
                     <% if(appUser) { %>
-                    <a href="/logout">
-                        Log Out
-                    </a>
+                    <li><a href="/users"><i class='material-icons'>home</i></a></li>
+                    <li><a href="/logout">Log Out</a></li>
                     <% } else { %>
-                    <a href="/auth/google">Login with Google</a>
-                    <% } %> </li>
+                      <li><a href="/auth/google">Login with Google</a></li>
+                    <% } %> 
             </ul>
           </div>
         </nav>

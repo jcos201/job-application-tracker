@@ -7,6 +7,7 @@ const applicationSchema = new Schema({
     dateApplied: Date,
     interviewDate: Date,
     contactName: String,
+    notes: String,
 })
 const userSchema = new Schema({
     name: String,

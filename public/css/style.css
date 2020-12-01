@@ -1,0 +1,97 @@
+:root {
+    --navColor: #2c3531;
+    --bgColor: #2b7a78;
+    --btnColors: #17252a;
+    --labelFont: #17252a;
+    --fontColor: #def2f1;
+}
+
+
+body {
+    background-color: var(--bgColor);
+    margin: 0;
+    display: grid;
+}
+
+body > main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+h2, h4, input, table {
+    font-family: 'Texturina', serif;
+    color: var(--fontColor);
+}
+
+h2 {
+    font-size: 3em;
+    padding-bottom: 10px;
+}
+
+table {
+    align-content: center;
+    align-items: center;
+    margin-left:auto;
+    margin-right: auto;
+    width: 90%;
+    margin-top: 10px;
+}
+
+th {
+    color: var(--labelFont);
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+input {
+    width: 60%;
+}
+
+.mainHdr {
+    font-size: 1.5rem;
+    color: var(--fontColor);
+    background-color: var(--navColor);
+}
+
+.input-field > label {
+    color: var(--labelFont);
+    font-size: 1.25rem;
+}
+
+
+
+.inputForm {
+    margin: 0 10%;
+    padding: 30px;
+    border: solid;
+    border-color: #feffff;
+    border-radius: 3%;
+}
+
+.nav-wrapper {
+                background-color: var(--navColor);
+            }
+
+
+.shortCol {
+    width: 40%;
+}
+
+.btn {
+    background-color: var(--btnColors);
+
+}
+
+.btnNarrow {
+    margin: 1%;
+    width: 100%;
+}
+
+.uplift {
+    font-family: 'Texturina', serif;
+    color: #def2f1;
+    align-content: center;
+    text-align: center;
+    font-size: 2.5rem;
+}

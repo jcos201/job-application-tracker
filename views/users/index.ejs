@@ -1,43 +1,53 @@
 <%- include('../partials/header') %>
 
 
-<div class="card-action right">
+<div class="card-action top">
+  <% if(appUser.applications.length > 0) { %>
   <form action="/applications/new" method="get">
     <button type="submit" class="btn white-text">Add A New Application</button>
   </form>
+  <% } else { %>
+    <form action="/applications/new" method="get">
+      <button type="submit" class="btn white-text pulse">Add A New Application</button>
+    </form>
+  <% } %> 
 </div>
 
-<div> <% if(appUser) { %>
-  <table class="responsive-table highlight">
+<div> <% if(appUser.applications.length > 0) { %>
+  <table class="responsive-table highlight center">
     <thead>
-      <tr><th colspan="6" class="center">My Applications:</th></tr>
+      <tr><th colspan="7" class="center mainHdr">My Applications:</th></tr>
       <tr>
       <th>Company Name</th>
       <th>Job Applied For</th>
       <th>Name of Contact at Company</th>
       <th>Date Applied:</th>
       <th>Interview Scheduled</th>  
+      <th>Notes</th>  
       <th></th>
       </tr>
     </thead>
   <% appUser.applications.forEach(function(jobsApplied){ %>
+
     <tbody>
       <tr>
         <td><%= jobsApplied.companyName %></td>
         <td><%= jobsApplied.jobTitle %></td>
         <td><%= jobsApplied.contactName %></td>
-        <td><%= jobsApplied.dateApplied %></td>
-        <td><%= jobsApplied.interviewDate %></td>
-        <td><form action="/applications/<%= jobsApplied._id %>" method="get"><input type="submit" value="Edit" class="btn"></form>
+        <td><%= jobsApplied.dateApplied ?  jobsApplied.dateApplied : '' %></td>
+        <td><%= jobsApplied.interviewDate ? jobsApplied.interviewDate : '' %>
+        </td>
+        <td><%= jobsApplied.notes %></td>
+        <td><form action="/applications/<%= jobsApplied._id %>" method="get"><input type="submit" value="Edit" class="btn btnNarrow"></form>
            <br/>
-          <form action="/delete/<%= jobsApplied._id %>?_method=DELETE" method="POST"><input type="submit" value="Delete" class="btn"></form>
+          <form action="/delete/<%= jobsApplied._id %>?_method=DELETE" method="POST"><input type="submit" value="Delete" class="btn btnNarrow red"></form>
         </td>
       </tr>
     </tbody>
     <% })%>
   </table>
   <% } else { %>
-  <p>A journey of a thousand miles begins with a single step</p>
+  <p class="uplift">A journey of a thousand miles begins with a single step</p>
   <% } %> </li>
 </div>
 
