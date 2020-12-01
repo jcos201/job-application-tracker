@@ -15,8 +15,6 @@ function index(req, res) {
 
         if (!req.user) { req.user = users[0] }
 
-        console.log('hours')
-        console.log(req.user.applications[0].interviewDate.getHours())
         
 
         res.render('users/index', {
