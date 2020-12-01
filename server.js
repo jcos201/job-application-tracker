@@ -4,22 +4,17 @@ const morgan = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 require('dotenv').config();
 
 const app = express();
 
-// connect to the MongoDB with mongoose
 require('./config/database');
 require('./config/passport');
-// create a router object
-
-// require controller module
 
 
-// define routes
 const indexRoutes = require('./routes/index');
 const userRoutes = require('./routes/users');
 
@@ -48,7 +43,6 @@ app.use(function(req, res, next){
 
 app.use('/', indexRoutes);
 app.use('/', userRoutes);
-// export the router object
 
 app.listen(port, () => {
     console.log(`Express is listening on port:${port}`);
