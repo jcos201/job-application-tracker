@@ -1,6 +1,16 @@
 ## My Job Application Tracker
 
-This app can be used to track all the job applications submitted during a job seach.
+This app can be used to track all the job applications submitted during a job seach.  You will be able to:
+* Login using Google OAuth
+* Add the following information about the job you applied for:
+  * Company Name
+  * Position Applied For
+  * Date Applied (optional)
+  * Interview Date (optional)
+  * Name of Contact at Company (optional)
+  * Notes about application (optional)
+* Application info will persist even after you've logged out
+* Edit or Delete application entry
 
 ## Entity Relationship Diagram
 ![ERD Screenshot - 1 User can have Many Applications](./public/images/ERD.jpeg) 
