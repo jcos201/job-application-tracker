@@ -3,14 +3,14 @@
 This app can be used to track all the job applications submitted during a job seach.
 
 ## Entity Relationship Diagram
-![ERD Screenshot - 1 User can have Many Applications](./images/ERD.jpeg) 
+![ERD Screenshot - 1 User can have Many Applications](./public/images/ERD.jpeg) 
 
 ## Wireframe
-![Home Screen Wireframe](./images/wf1.jpeg) 
+![Home Screen Wireframe](./public/images/wf1.jpeg) 
 
-![User Home Page Wireframe](./images/wf2.jpeg) 
+![User Home Page Wireframe](./public/images/wf2.jpeg) 
 
-![Application Add/Edit Screen Wireframe](./images/wf3.jpeg) 
+![Application Add/Edit Screen Wireframe](./public/images/wf3.jpeg) 
 
 ## Technologies Used
 * HTML5
