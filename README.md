@@ -26,6 +26,9 @@ This app can be used to track all the job applications submitted during a job se
 * HTML5
 * CSS3
 * JavaScript
+* Express
+* MongoDB
+* Mongoose
 * Google Fonts
 * Materialize
 
