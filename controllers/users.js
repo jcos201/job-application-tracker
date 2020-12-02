@@ -108,4 +108,4 @@ function deleteAppl(req,res) {
         });
     })
 
-};
+}; 
