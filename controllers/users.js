@@ -11,11 +11,24 @@ module.exports = {
 }
 
 function index(req, res) {
-    User.find({}, function (err, users) {
+ //   console.log('req.user before findOne')
+ //   console.log(req.user)
 
-        if (!req.user) { req.user = users[0] }
+    User.findOne({'googleId':req.user.googleId}, function (err, users) {
 
-        
+  //      if(req.user) {
+  //          console.log('req.user.name found')
+  //          console.log(req.user.name)
+  //      }
+
+       // if (!req.user) { req.user = users[0] }
+
+
+  //      console.log('req.user after fine one')
+  //      console.log(req.user)
+
+  //      console.log('users from function')
+ //      console.log(users)
 
         res.render('users/index', {
             users,
@@ -26,7 +39,7 @@ function index(req, res) {
 };
 
 function showAllAppl(req, res) {
-    User.find({}, function (err, users) {
+    User.findOne({'googleId':req.user.googleId}, function (err, users) {
 
         res.render('applications/new', {
             appUser: users,
@@ -36,9 +49,11 @@ function showAllAppl(req, res) {
 };
 
 function newAppl(req, res) {
-    User.find({}, function (err, users) {
-        users[0].applications.push(req.body);
-        users[0].save(function (err) {
+    console.log('req.user before find in newAppl')
+    console.log(req.user)
+    User.findOne({'googleId':req.user.googleId}, function (err, users) {
+        users.applications.push(req.body);
+        users.save(function (err) {
             res.redirect('/users')
         });
 
@@ -47,9 +62,9 @@ function newAppl(req, res) {
 };
 
 function showAppl(req, res) {
-    User.find({}, function (err, users) {
+    User.findOne({'googleId':req.user.googleId}, function (err, users) {
 
-        application = users[0].applications.find(appl => appl.id === req.params.id);
+        application = users.applications.find(appl => appl.id === req.params.id);
         res.render('applications/show', {
             applicationID: req.params.id,
             appUser: users,
@@ -61,18 +76,18 @@ function showAppl(req, res) {
 }
 
 function updateAppl(req, res) {
-    User.find({}, function (err, users) {
+    User.findOne({'googleId':req.user.googleId}, function (err, users) {
         req.body._id = req.params.id;
 
-        indx =  users[0].applications.indexOf(users[0].applications.find(appl => appl.id === req.params.id));
+        indx =  users.applications.indexOf(users.applications.find(appl => appl.id === req.params.id));
 
         console.log('req.body.dateApplied')
         console.log(req.body.dateApplied)
 
         req.body.done = false;
-        users[0].applications.splice(indx, 1, req.body);
+        users.applications.splice(indx, 1, req.body);
 
-        users[0].save(function (err) {
+        users.save(function (err) {
             res.redirect('/users')
         });
     })
@@ -80,15 +95,15 @@ function updateAppl(req, res) {
 
 
 function deleteAppl(req,res) {
-    User.find({}, function (err, users) {
+    User.findOne({'googleId':req.user.googleId}, function (err, users) {
         req.body._id = req.params.id;
     
-        indx =  users[0].applications.indexOf(users[0].applications.find(appl => appl.id === req.params.id));
+        indx =  users.applications.indexOf(users.applications.find(appl => appl.id === req.params.id));
     
         req.body.done = false;
-        users[0].applications.splice(indx, 1);
+        users.applications.splice(indx, 1);
     
-        users[0].save(function (err) {
+        users.save(function (err) {
             res.redirect('/users')
         });
     })
