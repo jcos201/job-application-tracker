@@ -1,30 +1,30 @@
 <%- include('../partials/header') %>
 
 <div>
-<form action="/applications/" class="col s12 inputForm" method="post">
-    <div class="row">
-        <div class="input-field"><label class="lblFont">Company Name</label>
-            <input type="text" name="companyName" placeholder="Name Of Company" required></div>
-    </div>
-    <div class="row">
-        <div class="input-field"><label>Position</label>
-            <input type="text" name="jobTitle" placeholder="Position Desired" required></div>
-    </div>
-    <div class="row">
-        <div class="input-field" ><label>Name of Contact in Company</label>
-            <input type="text" name="contactName" placeholder="Contact Name"></div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6"><label class="active">Date Applied</label>
-            <input type="datetime-local" name="dateApplied" placeholder="Date of Application"></div>
-        <div class="input-field col s6"><label class="active">Interview Date</label>
-            <input type="datetime-local" name="interviewDate" placeholder="Date of Interview Scheduled"></div>
-    </div>
-    <div class="row">
-        <div class="input-field" ><label>Notes</label>
-            <input type="text" name="notes" placeholder="Write any important details here"></div>
-    </div>
-    <button type="submit" class="btn white-text">Add Application to Database</button>
-</form>
+    <form action="/applications/" class="col s12 inputForm" method="post">
+        <div class="row">
+            <div class="input-field"><label class="lblFont">Company Name</label>
+                <input type="text" name="companyName" placeholder="Name Of Company" required></div>
+        </div>
+        <div class="row">
+            <div class="input-field"><label>Position</label>
+                <input type="text" name="jobTitle" placeholder="Position Desired" required></div>
+        </div>
+        <div class="row">
+            <div class="input-field"><label>Name of Contact in Company</label>
+                <input type="text" name="contactName" placeholder="Contact Name"></div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6"><label class="active">Date Applied</label>
+                <input type="datetime-local" name="dateApplied" placeholder="Date of Application"></div>
+            <div class="input-field col s6"><label class="active">Interview Date</label>
+                <input type="datetime-local" name="interviewDate" placeholder="Date of Interview Scheduled"></div>
+        </div>
+        <div class="row">
+            <div class="input-field"><label>Notes</label>
+                <input type="text" name="notes" placeholder="Write any important details here"></div>
+        </div>
+        <button type="submit" class="btn white-text">Add Application to Database</button>
+    </form>
 </div>
 <%- include('../partials/footer') %>

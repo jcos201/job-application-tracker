@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="row">
-    <div class="input-field  col s6"><label class="active">Date Applied</label>
+        <div class="input-field  col s6"><label class="active">Date Applied</label>
             <input type="datetime-local" name="dateApplied" placeholder="Date of Application"
                 value="<%= application.dateApplied ? application.dateApplied.getFullYear() +'-'+ ('0' + (application.dateApplied.getMonth()+1)).slice(-2) +'-'+ ('0' + (application.dateApplied.getDate())).slice(-2) +'T'+ ('0' + (application.dateApplied.getHours())).slice(-2) + ':' + ('0' + (application.dateApplied.getMinutes())).slice(-2) +':00.000' : '' %>">
         </div>
@@ -27,8 +27,9 @@
         </div>
     </div>
     <div class="row">
-        <div class="input-field" ><label>Notes</label>
-            <input type="text" name="notes" placeholder="Write any important details here" value="<%= application.notes %>"></div>
+        <div class="input-field"><label>Notes</label>
+            <input type="text" name="notes" placeholder="Write any important details here"
+                value="<%= application.notes %>"></div>
     </div>
     <button type="submit" class="btn white-text">Update Application</button>
     <form action="/applications" method="get">
